@@ -1,0 +1,16 @@
+CREATE TABLE customers (id,name varchar(20), age,marks);
+
+-- insert some values
+INSERT INTO customers (id,name,age,marks)
+VALUES  (1, 'praveen',20,480),
+        (2, 'ram',21,379),
+        (3, 'KARTHIK',20,420),
+        (4,'loganath',21,410),
+        (5,'riwan',18,429),
+        (6,'mari',20,412),
+        (7,'kirubakar',19,458);
+-- fetch some values
+alter TABLE customers add column email varchar(40);
+update customers set email = 'maxxxx@gmail.com'where age = 18;
+select sum(marks) from customers where id between 2 and 6;
+
