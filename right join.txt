@@ -1,0 +1,21 @@
+CREATE TABLE Student (id,admission_no varchar(20) not null,first_name varchar(20) not null,last_name varchar(20) not null,age,city varchar(20) not null);     
+INSERT INTO Student (id,admission_no, first_name, last_name, age, city)       
+VALUES (1,1111,'Luisa', 'Evans', 13, 'Texas'),       
+       (2,2135, 'Paul', 'Ward', 15, 'Alaska'),       
+       (3,4321, 'Peter', 'Bennett', 14, 'California'),    
+       (4,4513,'Carlos', 'Patterson', 17, 'New York'),       
+       (5,5112, 'Rose', 'Huges', 16, 'Florida'),  
+       (6,0937, 'Marielia', 'Simmons', 15, 'Arizona'),    
+       (7,7555,'Antonio', 'Butler', 14, 'New York'),       
+       (8,8345, 'Diego', 'Cox', 13, 'California');  
+CREATE TABLE Fee (id,admission_no varchar(20) not null,course varchar(20) not null,amount_paid); 
+INSERT INTO Fee (id,admission_no, course, amount_paid)       
+VALUES (1,8345,'Java', 20000),       
+       (4,7555, 'Android', 22000),       
+       (8,1111, 'Python', 18000),    
+       (10,0937,'SQL', 30000),       
+       (2,5112, 'Machine Learning', 15000); 
+SELECT * FROM Student;
+SELECT * FROM Fee;
+SELECT Student.id, Student.admission_no, Student.first_name, Student.last_name, Fee.course, Fee.amount_paid
+FROM Student  RIGHT outer JOIN Fee  ON Student.id = Fee.id;  
